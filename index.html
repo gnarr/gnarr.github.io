@@ -1,1 +1,67 @@
-<a href="steam://connect/lag.gnarr.org/LaG">lag.gnarr.org password: LaG</a>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    a.button {
+      -webkit-appearance: button;
+      -moz-appearance: button;
+      appearance: button;
+
+      text-decoration: none;
+      color: initial;
+    }
+    </style>
+    <script>
+    function copyToClipboard() {
+      var connectionString = document.getElementById("connectionString");
+      connectionString.select();
+      document.execCommand("copy");
+      alert("Copied the text: " + copyText.value);
+    }
+    </script>
+  </head>
+<body>
+  
+  <h1>LaG CS:GO PUG Þjónn</h1>
+  
+  <p>Þjónninn er 128-tick og hýstur í Reykjavík. Hann er settur upp sem PUG með friendly-fire, slökkt á damage í console og með damage print í enda rounds. Serverinn notar SMAC anti-cheat og er tengdur við SMACBans.com.</p>
+ 
+  <h3>Að tengjast LaG</h3>
+ 
+  <p>Það eru nokkrar leiðir til þess að tengjast við Þjóninn. Þú getur afritað tengi-strenginn hérna fyrir neðan og "peistað" í console'inn í leiknum:</p>
+<input type="text" value="connect lag.gnarr.org; password LaG" id="connectionString" readonly>
+<button onclick="copyToClipboard()">Afrita tengi upplýsingar</button>
+  
+  <p>Þú getur klikkað á þennann takka: </p>
+  <a href="steam://connect/lag.gnarr.org/LaG" class="button">Tengjast LaG CS:GO</a>
+
+  <p>Eða þú getur fundið serverinn í "Community Servers" í leiknum, undir nafninu "lag.gnarr.org" og notað lykilorðið "LaG"</p>
+  
+  <h3>Stillingar fyrir 128-tick</h3>
+
+  <p>Til þess að fá bestu mögulegu upplifun á servernum er mælt með að bæta við eftirfarandi í autoexec.cfg:</p>
+  
+  <pre>
+    <code>
+rate "128000" 
+cl_interp "0" 
+cl_interp_ratio "1" 
+cl_cmdrate "128" 
+cl_updaterate "128"
+    </code>
+  </pre>
+  <p>Slóðin á autoexec er yfirleitt:</p>
+  <input type="text" value="C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\cfg\autoexec.cfg" readonly>
+  <p>En ef þér gengur illa að finna skránna, þá geturðu notað eftirfarandi leiðbeiningar:</p>
+  <ol>
+    <li>Opnaðu Steam og farðu í LIBRARY</li>
+    <li>Hægri-klikkaðu á Counter-Strike: Global Offensive í leikja listanum, veldu “Properties”.</li>
+    <li>Í glugganum sem oppnast, veldu “Local Files” tabbið og klikkaðu svo á “Browse Local Files…”.</li>
+    <li>Windows gluggi með skrám opnast. Oppnaðu möppurnar “csgo -> cfg”. Fannstu autoexec.cfg hér? Ef svo er, þá opnarðu hana og bætir línunum við! Ef ekki, farðu á næsta lið.</li>
+    <li>Finndu “Steam” möppuna þína. Opnaðu “userdata -> [Steam user ID] - > 730 -> local -> cfg”.</li>
+  </ol>
+</body>
+</html>
+
+
+
