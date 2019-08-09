@@ -3,86 +3,61 @@
   <head>
     <title>LaG CS:GO</title>
     <style>
-      body {
-        background-color: #002B36;
-        color: #B58900;
-        font-family: helvetica, arial, sans-serif;
-      }
-      a {
-        color: #DC322F;
-      }
-      a.button {
-        -webkit-appearance: button;
-        -moz-appearance: button;
-        appearance: button;
+      body {background-color:#666;}
 
-        text-decoration: none;
-        background-color: #073642;
-        color: #B58900;
-        padding: 5px;
-        cursor: pointer;
-      }
-      input {
-        background-color: #002B36;
-        color: #B58900;
-        border-color: #678CB1;
+      #timedate {
+        font: small-caps lighter 43px/150% "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+        text-align:left;
+        width: 50%;
+        margin: 40px auto;
+        color:#fff;
+        border-left: 3px solid yellow;
+        padding: 20px;
       }
     </style>
     <script>
-    function copyToClipboard() {
-      var connectionString = document.getElementById("connectionString");
-      connectionString.select();
-      document.execCommand("copy");
-      alert("Copied the text: " + copyText.value);
+    // START CLOCK SCRIPT
+
+    Number.prototype.pad = function(n) {
+      for (var r = this.toString(); r.length < n; r = 0 + r);
+      return r;
+    };
+
+    function updateClock() {
+      var now = new Date();
+      var milli = now.getMilliseconds(),
+        sec = now.getSeconds(),
+        min = now.getMinutes(),
+        hou = now.getHours(),
+        mo = now.getMonth(),
+        dy = now.getDate(),
+        yr = now.getFullYear();
+      var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      var tags = ["mon", "d", "y", "h", "m", "s", "mi"],
+        corr = [months[mo], dy, yr, hou.pad(2), min.pad(2), sec.pad(2), milli];
+      for (var i = 0; i < tags.length; i++)
+        document.getElementById(tags[i]).firstChild.nodeValue = corr[i];
     }
+
+    function initClock() {
+      updateClock();
+      window.setInterval("updateClock()", 1);
+    }
+
+    // END CLOCK SCRIPT
     </script>
   </head>
-<body>
-  
-  <h1>LaG CS:GO PUG Þjónn</h1>
-  
-  <p>Þjónninn er 128-tick og hýstur í Reykjavík. Hann er settur upp sem PUG með friendly-fire, slökkt á damage í console og með damage print í enda rounds. Serverinn notar SMAC og er tengdur við <a target="_blank" rel="noopener noreferrer" href="http://smacbans.com/">SMACBans.com</a>.</p>
- 
-  <h3>Að tengjast LaG</h3>
- 
-  <p>Það eru nokkrar leiðir til þess að tengjast við Þjóninn:</p> 
- 
-  <p>1. Þú getur afritað tengi-strenginn hérna fyrir neðan og "peistað" í console'inn í leiknum:</p>
-<input type="text" value="connect lag.gnarr.org; password LaG" id="connectionString" style="width: 220px;" readonly>
-<a onclick="copyToClipboard()" class="button">Afrita tengi upplýsingar</a>
-  
-  <p>2. Þú getur klikkað á þennann takka: </p>
-  <a href="steam://connect/lag.gnarr.org/LaG" class="button">Tengjast LaG CS:GO</a>
+<body onLoad="initClock()">
 
-  <p>3. Þú getur fundið serverinn í "Community Server Browser" í leiknum, undir nafninu "lag.gnarr.org" og notað lykilorðið "LaG"</p>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/MwX78urmidA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <h3>Að starta leik</h3>
-  <p>Eftir að hafa tengst servernum þarf einhver að skrifa .setup í spjallið í leiknum, og fer svo í gegnum valmynd sem að setur upp hvernig lið og map eru valin.</p>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/2xpwDgkr6H8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <h3>Discord</h3>
-  <p>Komdu og talaðu við okkur á <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/MQDrHVt">LaG á Discord</a>.</p>
-  <h3>Stillingar fyrir 128-tick</h3>
-
-  <p>Til þess að fá bestu mögulegu upplifun á servernum er mælt með að bæta við eftirfarandi í autoexec.cfg:</p>
-  <pre>
-    <code>
-  rate "128000" 
-  cl_interp "0" 
-  cl_interp_ratio "1" 
-  cl_cmdrate "128" 
-  cl_updaterate "128"
-    </code>
-  </pre>
-  <p>Slóðin á autoexec er yfirleitt:</p>
-  <input type="text" value="C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\cfg\autoexec.cfg" style="width: 630px;" readonly>
-  <p>En ef þér gengur illa að finna skránna, þá geturðu notað eftirfarandi leiðbeiningar:</p>
-  <ol>
-    <li>Opnaðu Steam og farðu í LIBRARY</li>
-    <li>Hægri-klikkaðu á Counter-Strike: Global Offensive í leikja listanum, veldu "Properties".</li>
-    <li>Í glugganum sem oppnast, veldu "Local Files" tabbið og klikkaðu svo á "Browse Local Files…".</li>
-    <li>Windows gluggi með skrám opnast. Oppnaðu möppurnar “csgo -> cfg”. Fannstu autoexec.cfg hér? Ef svo er, þá opnarðu hana og bætir línunum við! Ef ekki, farðu á næsta lið.</li>
-    <li>Finndu Steam möppuna þína. Opnaðu "userdata -> [Steam user ID] - > 730 -> local -> cfg".</li>
-  </ol>
+  <div id="timedate">
+    <a id="mon">January</a>
+    <a id="d">1</a>,
+    <a id="y">0</a><br />
+    <a id="h">12</a> :
+    <a id="m">00</a>:
+    <a id="s">00</a>:
+    <a id="mi">000</a>
+  </div>
 </body>
 </html>
 
