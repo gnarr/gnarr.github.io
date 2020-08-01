@@ -4,6 +4,20 @@
     <title>Time</title>
     <style>
       body {background-color:#666;}
+      
+      .container { 
+        height: 200px;
+        position: relative;
+      }
+
+      .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
 
       #timedate {
         font-family: 'Lucida Console', Monaco, monospace;
@@ -47,11 +61,15 @@
   </head>
 <body onLoad="initClock()">
 
-  <div id="timedate">
-    <a id="mon">January</a>
-    <a id="d">1</a>,
-    <a id="y">0</a><br />
-    <a id="h">12</a>:<a id="m">00</a>:<a id="s">00</a>.<a id="mi">000</a>
+  <div class="container">
+    <div class="center">
+      <div id="timedate">
+        <a id="mon">January</a>
+        <a id="d">1</a>,
+        <a id="y">0</a><br />
+        <a id="h">12</a>:<a id="m">00</a>:<a id="s">00</a>.<a id="mi">000</a>
+      </div>
+    </div>
   </div>
 </body>
 </html>
