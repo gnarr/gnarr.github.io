@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- HTML Codes by Quackit.com -->
+    <title>FACEIT Demo Downloader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="FACEIT Demo Downloader" />
+    <meta
+      name="description"
+      content="FACEIT Demo Downloader is a free program that will will search for, download and extract your demos from FACEIT."
+    />
+    <style>
+      body {
+        background-color: #ffffff;
+        background-repeat: no-repeat;
+        background-position: top left;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        font-family: Arial, sans-serif;
+        color: #000000;
+        background-color: #ffffff;
+      }
+
+      p {
+        font-family: Georgia, serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: normal;
+        color: #000000;
+        background-color: #ffffff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>FACEIT Demo Downloader</h1>
+    <p>
+      This program will search for, download and extract your demos from FACEIT.
+    </p>
+    <p>
+      Windows executable:
+      <a href="https://gnarr.github.io/faceit_demo_downloader.exe">DOWNLOAD</a> (SHA256: 7A236B08952E6E18954952C3919A352B80958527C26B0BFFCD9E15549E056439)
+    </p>
+    <p>
+      NOTICE! If you have played a lot of games on FACEIT, the initial sync can
+      take a very long time. FACEIT only stores a few months worth of demos, so
+      it could take a while before finding a downloadable demo.
+    </p>
+    <p></p>
+    <p>
+      FACEIT Demo Downloader is a free program. However, if you want to support
+      me, feel free to send me skins through my
+      <a
+        href="https://steamcommunity.com/tradeoffer/new/?partner=2024927&token=7fdx418G"
+        >Steam Trade URL</a
+      >, leave a comment on my
+      <a href="https://steamcommunity.com/id/gnarr">Steam Profile</a> or follow
+      me on <a href="https://www.faceit.com/en/players/Gnarr">FACEIT</a>.
+    </p>
+  </body>
+</html>
