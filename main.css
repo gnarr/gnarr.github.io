@@ -40,157 +40,157 @@ html.contrast span.mfw {
 }
 
 @media screen and (prefers-color-scheme: light) {
-    html.inverted {
+    html.dark-mode {
         background-color:#000
     }
 
-    html.inverted body {
+    html.dark-mode body {
         color: #d9d9d9
     }
 
-    html.inverted #contrast,html.inverted #invmode {
+    html.dark-mode #contrast,html.dark-mode #invmode {
         color: #fff;
         background-color: #000
     }
 
-    html.inverted blockquote {
+    html.dark-mode blockquote {
         color: #d3c9be
     }
 
-    html.inverted blockquote:before {
+    html.dark-mode blockquote:before {
         color: #b8b8b8
     }
 
-    html.inverted a {
+    html.dark-mode a {
         color: #00a2e7
     }
 
-    html.inverted a:visited {
+    html.dark-mode a:visited {
         color: #ca1a70
     }
 
-    html.inverted span.wr {
+    html.dark-mode span.wr {
         color: #d24637
     }
 
-    html.inverted span.mfw {
+    html.dark-mode span.mfw {
         color: #b00000
     }
 
-    html.inverted.contrast {
+    html.dark-mode.contrast {
         background-color: #000
     }
 
-    html.inverted.contrast body {
+    html.dark-mode.contrast body {
         color: #fff
     }
 
-    html.inverted.contrast #contrast,html.inverted.contrast #invmode {
+    html.dark-mode.contrast #contrast,html.dark-mode.contrast #invmode {
         color: #fff;
         background-color: #000
     }
 
-    html.inverted.contrast blockquote {
+    html.dark-mode.contrast blockquote {
         color: #f8f6f5
     }
 
-    html.inverted.contrast blockquote:before {
+    html.dark-mode.contrast blockquote:before {
         color: #e5e5e5
     }
 
-    html.inverted.contrast a {
+    html.dark-mode.contrast a {
         color: #44c7ff
     }
 
-    html.inverted.contrast a:visited {
+    html.dark-mode.contrast a:visited {
         color: #e9579e
     }
 
-    html.inverted.contrast span.wr {
+    html.dark-mode.contrast span.wr {
         color: #db695d
     }
 
-    html.inverted.contrast span.mfw {
+    html.dark-mode.contrast span.mfw {
         color: #ff0d0d
     }
 }
 
 @media (prefers-color-scheme: dark) {
-    html:not(.inverted) {
+    html:not(.dark-mode) {
         background-color:#000
     }
 
-    html:not(.inverted) body {
+    html:not(.dark-mode) body {
         color: #d9d9d9
     }
 
-    html:not(.inverted) #contrast,html:not(.inverted) #invmode {
+    html:not(.dark-mode) #contrast,html:not(.dark-mode) #invmode {
         color: #fff;
         background-color: #000
     }
 
-    html:not(.inverted) blockquote {
+    html:not(.dark-mode) blockquote {
         color: #d3c9be
     }
 
-    html:not(.inverted) blockquote:before {
+    html:not(.dark-mode) blockquote:before {
         color: #b8b8b8
     }
 
-    html:not(.inverted) a {
+    html:not(.dark-mode) a {
         color: #00a2e7
     }
 
-    html:not(.inverted) a:visited {
+    html:not(.dark-mode) a:visited {
         color: #ca1a70
     }
 
-    html:not(.inverted) span.wr {
+    html:not(.dark-mode) span.wr {
         color: #d24637
     }
 
-    html:not(.inverted) span.mfw {
+    html:not(.dark-mode) span.mfw {
         color: #b00000
     }
 
-    html:not(.inverted).contrast {
+    html:not(.dark-mode).contrast {
         background-color: #000
     }
 
-    html:not(.inverted).contrast body {
+    html:not(.dark-mode).contrast body {
         color: #fff
     }
 
-    html:not(.inverted).contrast #contrast,html:not(.inverted).contrast #invmode {
+    html:not(.dark-mode).contrast #contrast,html:not(.dark-mode).contrast #invmode {
         color: #fff;
         background-color: #000
     }
 
-    html:not(.inverted).contrast blockquote {
+    html:not(.dark-mode).contrast blockquote {
         color: #f8f6f5
     }
 
-    html:not(.inverted).contrast blockquote:before {
+    html:not(.dark-mode).contrast blockquote:before {
         color: #e5e5e5
     }
 
-    html:not(.inverted).contrast a {
+    html:not(.dark-mode).contrast a {
         color: #44c7ff
     }
 
-    html:not(.inverted).contrast a:visited {
+    html:not(.dark-mode).contrast a:visited {
         color: #e9579e
     }
 
-    html:not(.inverted).contrast span.wr {
+    html:not(.dark-mode).contrast span.wr {
         color: #db695d
     }
 
-    html:not(.inverted).contrast span.mfw {
+    html:not(.dark-mode).contrast span.mfw {
         color: #ff0d0d
     }
 
-    html.inverted html {
+    html.dark-mode html {
         background-color: #fefefe
     }
 }
