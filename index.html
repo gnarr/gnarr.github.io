@@ -1,36 +1,111 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- HTML Codes by Quackit.com -->
-    <title>Gnarr dot GitHub</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="FACEIT Demo Downloader" />
-    <meta
-      name="description"
-      content="FACEIT Demo Downloader is a free program that will will search for, download and extract your demos from FACEIT."
-    />
-    <style type="text/css">
-      body {
-        margin: 40px auto;
-        max-width: 650px;
-        line-height: 1.6;
-        font-size: 18px;
-        color: #444; 
-        padding: 0 10px;
-      }
-      h1,h2,h3 {
-        line-height: 1.2
-      }
-    </style>
-  </head>
 
-  <body>
-    <h1>Gnarr dot GitHub</h1>
-    <p>
-      <a href="/fdd">FACEIT Demo Downloader</a>
-    </p>
-    <p>
-      <a href="/clock">Fullscreen Clock</a>
-    </p>
-  </body>
+<head>
+  <!-- HTML Codes by Quackit.com -->
+  <title>Gnarr dot GitHub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="FACEIT Demo Downloader" />
+  <meta name="description"
+    content="FACEIT Demo Downloader is a free program that will will search for, download and extract your demos from FACEIT." />
+  <style type="text/css">
+    body {
+      margin: 40px auto;
+      max-width: 650px;
+      line-height: 1.6;
+      font-size: 18px;
+      color: #444;
+      padding: 0 10px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Gnarr dot GitHub</h1>
+  <p>
+    <a href="/clock">Fullscreen Clock</a>
+  </p>
+  <button id="darkmode" class="cont-inv" tabindex="2">Dark mode</button>
+  <script type="text/javascript">
+    (() => {
+      "use strict";
+
+      // ——————————————————————————————————————————————
+      // Configuration & state
+      // ——————————————————————————————————————————————
+
+      // Decide which event to listen for (touch or click)
+      const toggleEventName = ("ontouchstart" in window) ? "touchend" : "click";
+
+      // ——————————————————————————————————————————————
+      // Button labels and CSS class names
+      // ——————————————————————————————————————————————
+
+      const contrastToggleLabels = {
+        off: "◑",
+        on: "◑"
+      };
+      const darkModeToggleLabels = {
+        off: "☼",
+        on: "☾"
+      };
+
+      const CONTRAST_CLASS_NAME = "contrast-mode";
+      const DARKMODE_CLASS_NAME = "dark-mode";
+
+      // ——————————————————————————————————————————————
+      // Utility: create a toggle button that adds/removes a class
+      // ——————————————————————————————————————————————
+      /**
+       * @param {string}      buttonId    — ID for the new <button>
+       * @param {{off:string, on:string}} labels      — text for off/on states
+       * @param {string}      className   — CSS class to toggle on <html>
+       */
+      function createToggleButton(buttonId, labels, className) {
+        const htmlRoot = document.documentElement;
+
+        // Build the button
+        const button = document.createElement("button");
+        button.id = buttonId;
+        button.classList.add("toggle-control");
+        button.textContent = labels.off;
+        button.tabIndex = 0;
+
+        // Track toggle state
+        let isOn = false;
+        button.addEventListener(toggleEventName, () => {
+          isOn = !isOn;
+          button.textContent = isOn ? labels.on : labels.off;
+          htmlRoot.classList[isOn ? "add" : "remove"](className);
+        });
+
+        document.body.appendChild(button);
+      }
+
+      // ——————————————————————————————————————————————
+      // Initialization
+      // ——————————————————————————————————————————————
+      createToggleButton(
+        "contrastToggleButton",
+        contrastToggleLabels,
+        CONTRAST_CLASS_NAME
+      );
+
+      createToggleButton(
+        "darkmode",
+        darkModeToggleLabels,
+        DARKMODE_CLASS_NAME
+      );
+
+      startHueRotation();
+    })();
+  </script>
+</body>
+
 </html>
